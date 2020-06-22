@@ -1,0 +1,262 @@
+<html>
+  <head>
+    <title>Greet Me</title>
+    <link rel="stylesheet" href="master.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Bellota&family=Bungee+Inline&family=Cinzel+Decorative&family=Fredericka+the+Great&family=Lato&family=Lobster&family=Luckiest+Guy&family=Metal+Mania&family=Monoton&family=Orbitron&family=Oswald:wght@200&family=Quicksand&family=Raleway:wght@300;400&family=Roboto:wght@300;400&family=Shadows+Into+Light+Two&family=Source+Code+Pro&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/ico" href="./icons/favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- CLOCK AREA -->
+      <div class="time">
+        00:00:00 AM
+      </div>
+
+      <!-- GREETING CONTAINER -->
+      <div class="greeting-container">
+        <h1 class="greeting">
+          <span id="wish"></span>,
+          <span id="username">Friend</span>
+        </h1>
+        <p class="quote"></p>
+      </div>
+
+      <!-- TODO CONTAINER (INPUT ELEMENT & ADD BUTTON) -->
+      <div class="todo-container">
+        <input
+          type="text"
+          maxlength="124"
+          class="todo-input element todo-writing"
+          id="todo-input"
+          width="80"
+          placeholder=" Type something here to let me remember!"
+        />
+        <button class="todo-add-button" id="todo-add-button">
+          ADD
+        </button>
+      </div>
+
+      <!-- TODO ITEMS CONTAINER -->
+      <div class="todo-items-container todo-writing" id="scrollbar">
+        <div class="scroll" id="todo-items-container"></div>
+      </div>
+    </div>
+
+    <!-- SHORTCUTS TAB CONTAINER -->
+    <div class="shortcuts-container-main" id="shortcuts-container-main">
+      <div class="menu-icon" id="menu-icon">
+        <span class="ham-icon"></span>
+      </div>
+      <div class="shortcuts-container-sub t" id="shortcuts-container-sub">
+        <div
+          class="shortcut-icons-container"
+          id="shortcut-icons-container"
+        ></div>
+      </div>
+    </div>
+
+    <!-- SETTINGS ICON CONTAINER -->
+    <div class="settings-container" id="settings-container">
+      <svg
+        class="settings-icon-wheel"
+        id="settings-icon-wheel"
+        ...=""
+        xmlns="http://www.w3.org/2100/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 100 100"
+        enable-background="new 0 0 100 100"
+        xml:space="preserve"
+        height="35"
+        width="35"
+      >
+        <linearGradient id="my-cool-gradient" x2="1" y2="1">
+          <stop offset="0%" stop-color="#a54da2" />
+          <stop offset="50%" stop-color="#e94057" />
+          <stop offset="100%" stop-color="#f27121" />
+        </linearGradient>
+        <path
+          d="M84.579,56.107L83,55.196c-1.878-1.084-3-3.026-3-5.196s1.122-4.112,3-5.196l1.579-0.911  c4.307-2.489,5.781-7.986,3.294-12.294l-3-5.197c-2.481-4.299-7.997-5.774-12.294-3.294L71,24.018c-1.879,1.087-4.124,1.085-6,0.001  c-1.878-1.085-3-3.028-3-5.196V17c0-4.963-4.037-9-9-9h-6c-4.963,0-9,4.037-9,9v1.824c0,2.168-1.122,4.11-3,5.196  c-1.878,1.084-4.122,1.085-6-0.001l-1.579-0.911c-4.295-2.48-9.812-1.005-12.294,3.294l-3,5.197  c-2.486,4.308-1.013,9.806,3.294,12.294L17,44.804c1.878,1.084,3,3.026,3,5.196s-1.122,4.112-3,5.196l-1.579,0.911  c-4.307,2.488-5.781,7.986-3.294,12.294l3,5.197c2.483,4.298,8,5.776,12.294,3.294L29,75.982c1.878-1.088,4.122-1.084,6-0.001  c1.878,1.085,3,3.028,3,5.196V83c0,4.963,4.037,9,9,9h6c4.963,0,9-4.037,9-9v-1.824c0-2.168,1.122-4.11,3-5.196  c1.876-1.083,4.121-1.087,6,0.001l1.579,0.911c4.296,2.479,9.813,1.003,12.294-3.294l3-5.197  C90.36,64.093,88.887,58.596,84.579,56.107z M50,65c-8.271,0-15-6.729-15-15s6.729-15,15-15s15,6.729,15,15S58.271,65,50,65z"
+        ></path>
+      </svg>
+    </div>
+
+    <!-- SETTINGS MENU CONTAINER -->
+    <div class="" id="settings-menu-container">
+      <div class="no-display" id="modal">
+        <!-- LEFT SIDE - CUSTOMIZATION CATEGORIES -->
+        <div class="customization-categories">
+          <span class="categories selected" id="name-fonts">
+            <img src="./svg/register.svg" alt="" height="21" width="21" />
+            &nbsp;&nbsp;&nbsp;&nbsp;Name & Fonts
+          </span>
+          <span class="categories back" id="background-images">
+            <img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5pYy1udHAtYmFja2dyb3VuZDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxwYXRoIGQ9Ik00LDQgTDExLDQgTDExLDIgTDQsMiBDMi45LDIgMiwyLjkgMiw0IEwyLDExIEw0LDExIEw0LDQgWiBNMTAsMTMgTDYsMTggTDE4LDE4IEwxNSwxNCBMMTIuOTcsMTYuNzEgTDEwLDEzIFogTTE3LDguNSBDMTcsNy42NyAxNi4zMyw3IDE1LjUsNyBDMTQuNjcsNyAxNCw3LjY3IDE0LDguNSBDMTQsOS4zMyAxNC42NywxMCAxNS41LDEwIEMxNi4zMywxMCAxNyw5LjMzIDE3LDguNSBaIE0yMCwyIEwxMywyIEwxMyw0IEwyMCw0IEwyMCwxMSBMMjIsMTEgTDIyLDQgQzIyLDIuOSAyMS4xLDIgMjAsMiBaIE0yMCwyMCBMMTMsMjAgTDEzLDIyIEwyMCwyMiBDMjEuMSwyMiAyMiwyMS4xIDIyLDIwIEwyMiwxMyBMMjAsMTMgTDIwLDIwIFogTTQsMTMgTDIsMTMgTDIsMjAgQzIsMjEuMSAyLjksMjIgNCwyMiBMMTEsMjIgTDExLDIwIEw0LDIwIEw0LDEzIFoiIGlkPSJwYXRoLTEiPjwvcGF0aD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJpYy1udHAtYmFja2dyb3VuZCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPG1hc2sgaWQ9Im1hc2stMiIgZmlsbD0id2hpdGUiPgogICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgIDwvbWFzaz4KICAgICAgICA8dXNlIGlkPSJTaGFwZSIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgIDwvZz4KPC9zdmc+"
+              alt=""
+              height="21"
+              width="21"
+            />
+            &nbsp;&nbsp;&nbsp;&nbsp;Backgrounds
+          </span>
+          <span class="categories back" id="color-themes">
+            <img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5pYy1udHAtY29sb3JzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPHBhdGggZD0iTTEyLDMgQzcuMDMsMyAzLDcuMDMgMywxMiBDMywxNi45NyA3LjAzLDIxIDEyLDIxIEMxMi44MywyMSAxMy41LDIwLjMzIDEzLjUsMTkuNSBDMTMuNSwxOS4xMSAxMy4zNSwxOC43NiAxMy4xMSwxOC40OSBDMTIuODgsMTguMjMgMTIuNzMsMTcuODggMTIuNzMsMTcuNSBDMTIuNzMsMTYuNjcgMTMuNCwxNiAxNC4yMywxNiBMMTYsMTYgQzE4Ljc2LDE2IDIxLDEzLjc2IDIxLDExIEMyMSw2LjU4IDE2Ljk3LDMgMTIsMyBaIE02LjUsMTIgQzUuNjcsMTIgNSwxMS4zMyA1LDEwLjUgQzUsOS42NyA1LjY3LDkgNi41LDkgQzcuMzMsOSA4LDkuNjcgOCwxMC41IEM4LDExLjMzIDcuMzMsMTIgNi41LDEyIFogTTkuNSw4IEM4LjY3LDggOCw3LjMzIDgsNi41IEM4LDUuNjcgOC42Nyw1IDkuNSw1IEMxMC4zMyw1IDExLDUuNjcgMTEsNi41IEMxMSw3LjMzIDEwLjMzLDggOS41LDggWiBNMTQuNSw4IEMxMy42Nyw4IDEzLDcuMzMgMTMsNi41IEMxMyw1LjY3IDEzLjY3LDUgMTQuNSw1IEMxNS4zMyw1IDE2LDUuNjcgMTYsNi41IEMxNiw3LjMzIDE1LjMzLDggMTQuNSw4IFogTTE3LjUsMTIgQzE2LjY3LDEyIDE2LDExLjMzIDE2LDEwLjUgQzE2LDkuNjcgMTYuNjcsOSAxNy41LDkgQzE4LjMzLDkgMTksOS42NyAxOSwxMC41IEMxOSwxMS4zMyAxOC4zMywxMiAxNy41LDEyIFoiIGlkPSJwYXRoLTEiPjwvcGF0aD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJpYy1udHAtY29sb3JzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgPC9tYXNrPgogICAgICAgIDx1c2UgaWQ9IlNoYXBlIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgPC9nPgo8L3N2Zz4="
+              alt=""
+              height="21"
+              width="21"
+            />
+            &nbsp;&nbsp;&nbsp;&nbsp;Color Themes
+          </span>
+          <span class="categories back" id="url">
+            <img src="./svg/link.svg" alt="" height="21" width="21" />
+            &nbsp;&nbsp;&nbsp;&nbsp;URL
+          </span>
+        </div>
+
+        <!-- RIGHT SIDE - CUSTOMIZATION OPTIONS -->
+        <div class="customization-options">
+          <!-- CHANGE DISPLAY NAME SETTINGS -->
+          <span class="label" id="name-label">
+            Customize Display Name:
+          </span>
+          <div class="name-change-container" id="name-change-container">
+            <div class="name-change-inputs-container">
+              <input
+                type="text"
+                maxlength="10"
+                class="name-input element"
+                id="name-input"
+                placeholder="Please enter your name here!"
+              />
+              <button class="add-name-button" id="add-name-button">
+                Change
+              </button>
+            </div>
+
+            <span class="min-label" id="">Choose Font:</span>
+            <div class="fonts-container" id="fonts-container">
+              <span class="fonts-dropdown-container" id="fonts-dropdown">
+                <input
+                  type="text"
+                  class="selected-font"
+                  id="selected-font"
+                  readonly
+                />
+                <button class="dropdown-toggle">
+                  <img
+                    src="./svg/down-arrow.svg"
+                    alt=""
+                    height="10"
+                    width="10"
+                    class="menu-img"
+                  />
+                </button>
+                <div class="no-display" id="dropdown-menu"></div>
+              </span>
+              <div class="font-preview-change-button-container">
+                <input
+                  type="text"
+                  class="font-preview"
+                  id="font-preview"
+                  value="This is a preview of the font"
+                  readonly
+                />
+                <button
+                  class="add-name-button font-change-button"
+                  id="change-font-style"
+                >
+                  Select
+                </button>
+              </div>
+            </div>
+
+            <span class="min-label" id="">Font Color:</span>
+            <div class="font-color-change-container">
+              <input
+                type="color"
+                class="select-font-color"
+                id="select-font-color"
+              />
+              <button class="add-name-button" id="change-font-color-button">
+                Choose
+              </button>
+            </div>
+            <p
+              class="note"
+              style="align-self: flex-start; margin-left: 0.9rem;"
+            >
+              *To change the font color click on the color bar above
+            </p>
+          </div>
+
+          <!-- CHOOSE BACKGROUND IMAGES SETTINGS -->
+          <span class="no-display" id="img-label">Choose Background:</span>
+          <div class="no-display" id="background-image-container">
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+            <div><img src="" alt="X" /></div>
+          </div>
+
+          <!-- CHANGE FONTS & COLOR CONTAINER -->
+          <div class="no-display" id="font-color-container">
+            <span class="min-label" id="">Choose Theme:</span>
+            <div class="color-container" id="colors-container">
+              <div class="light-colors" id="light-colors"></div>
+              <div class="dark-colors" id="dark-colors"></div>
+              <div class="gradient-colors" id="gradient-colors"></div>
+            </div>
+          </div>
+
+          <!-- URL BACKGROUND SETTINGS -->
+          <span class="no-display" id="url-label">
+            Image URL:
+          </span>
+          <div class="no-display" id="url-link-container">
+            <div class="url-input-container">
+              <input
+                type="url"
+                class="url-input element"
+                id="url-input"
+                placeholder="Please enter a URL to a image!"
+              />
+              <button class="add-name-button" id="url-button">
+                Change
+              </button>
+            </div>
+            <video controls class="url-tutorial" poster="./tutorial/poster.JPG">
+              <source src="./tutorial/URL_Tutorial.mp4" type="video/mp4" />
+            </video>
+            <p class="note">
+              *Here's a video that demonstrates how to link to a image
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>

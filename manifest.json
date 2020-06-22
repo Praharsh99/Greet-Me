@@ -1,0 +1,14 @@
+{
+  "name": "Greet Me",
+  "version": "1.0.0",
+  "description": "This Chrome extension greets and allows users to add todos",
+  "manifest_version": 2,
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["activeTab"],
+  "icons": {
+    "128": "./icons/icon.png"
+  }
+}
